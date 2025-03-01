@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: auth
+  datasource:
+    url: jdbc:postgresql://localhost:5432/storage_users
+    password: srvadmin
+    username: srvadmin
+    jpa:
+      hibernate:
+        ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+      show-sql: true
+jwt:
+  key: "secret-key"
+  expiration-time: 3600000
