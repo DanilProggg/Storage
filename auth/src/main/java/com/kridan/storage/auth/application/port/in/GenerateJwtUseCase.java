@@ -1,7 +1,7 @@
-package com.kridan.storage.auth.application.port.out;
+package com.kridan.storage.auth.application.port.in;
 
 import com.kridan.storage.auth.application.domain.model.User;
 
-public interface GenerateJwtUtil {
+public interface GenerateJwtUseCase {
     String generateJwt(User user);
 }

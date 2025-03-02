@@ -1,14 +1,11 @@
 package com.kridan.storage.auth.application.domain.service;
 
 import com.kridan.storage.auth.application.domain.model.User;
-import com.kridan.storage.auth.application.port.out.GenerateJwtUtil;
-import com.kridan.storage.auth.application.port.out.ValidateJwtUtil;
-import io.jsonwebtoken.SignatureAlgorithm;
-import lombok.RequiredArgsConstructor;
+import com.kridan.storage.auth.application.port.in.GenerateJwtUseCase;
+import com.kridan.storage.auth.application.port.in.ValidateJwtUseCase;
+import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
@@ -16,10 +13,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
 @Service
-public class AuthService implements GenerateJwtUtil, ValidateJwtUtil {
+public class JwtService implements GenerateJwtUseCase, ValidateJwtUseCase {
     @Value("${jwt.key}")
     private String secretKeyString;
-    @Value("${jwt.expiration}")
+    @Value("${jwt.expiration-time}")
     private long expirationTime;
     @Override
     public String generateJwt(User user) {

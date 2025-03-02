@@ -2,12 +2,10 @@ package com.kridan.storage.auth.adapter.out.persistence;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
-import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
